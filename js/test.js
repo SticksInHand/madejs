@@ -24,7 +24,7 @@ Schedule.prototype.display = function(){
 
     //遍历每项课程，建立包含它们信息的字符串
     for(var i = 0;i < this.lectures.length; i++)
-        str += this.lectures[i].display + "";
+        str += this.lectures[i].display + " ";
 
     return str;
 };
