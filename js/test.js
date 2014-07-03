@@ -81,6 +81,43 @@ function sendMessage(msg,obj){
     //如果
 }
 
+//发送一条消息的简单函数
+function sendMessage(msg , obj){
+    //如果消息和对象（的参数）都被提供
+    if(arguments.length == 2)
+        //给对象发送消息
+        obj.handleMsg(msg);
+
+    //否则，假定只提供了一条消息\
+    else
+        //那么仅显示默认的错误信息
+        alert(msg);
+
+}
+
+//仅用一个参数调用这个函数 - 用alert来显示此消息
+sendMessage("Hello,World!");
+
+//又或者我们可以将一个我们自己写好的对象传入
+//负责用另一套办法显示信息
+sendMessage("How are you?",{
+    handleMsg : function(msg){
+        alert("This is a custom message:" + msg);
+    }
+});
+//一个接受任意数量参数并将其转换为数组的函数
+function makeArrar(){
+    //临时使用的数组
+    var arr = [];
+
+    //遍历传入的每个参数
+    for(var i = 0;i<arguments.length;i++){
+        arr.push(arguments[i]);
+    }
+
+    //返回结果数组
+    return arr;
+}
 
 
 
