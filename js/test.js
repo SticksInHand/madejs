@@ -38,28 +38,48 @@
 //alert(mySchedule.display());
 
 
-foo = function(){
-    this.myName = "Foo function.";
+//foo = function(){
+//    this.myName = "Foo function.";
+//}
+//foo.prototype.sayHello = function(){
+//    alert(this.myName);
+//}
+//foo.prototype.bar = function(){
+//
+////    THIS = this.constructor;
+////    setTimeout(THIS.sayHello(),1000);
+//    setTimeout(
+//        (function(s){
+//            return function(){
+//                s.sayHello();
+//            }
+//        })(this), 5000);
+//}
+//
+//var f = new foo;
+//f.bar();
+
+var obj = new Object();
+var objRef = obj;
+
+obj.oneProperty = true;
+
+alert(obj.oneProperty == objRef.oneProperty);
+
+var items = new Array("one","two","three");
+var itemsRef = items;
+items = new Array("new","array");
+alert(items != itemsRef);
+
+var item = "test";
+var itemRef = item;
+item += "ing";
+alert(item != itemRef);
+
+//函数重载
+function sendMessage(msg,obj){
+    //如果
 }
-foo.prototype.sayHello = function(){
-    alert(this.myName);
-}
-foo.prototype.bar = function(){
-
-//    THIS = this.constructor;
-//    setTimeout(THIS.sayHello(),1000);
-    setTimeout(
-        (function(s){
-            return function(){
-                s.sayHello();
-            }
-        })(this), 5000);
-}
-
-var f = new foo;
-f.bar();
-
-
 
 
 
